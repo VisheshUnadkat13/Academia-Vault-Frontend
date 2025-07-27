@@ -1,0 +1,217 @@
+body {
+  font-family: 'Inter', sans-serif;
+  /* Using Inter font as requested */
+  margin: 0;
+  padding: 20px;
+  background-color: #f0f2f5;
+  /* Lighter background */
+  color: #333;
+  line-height: 1.6;
+}
+
+.container {
+  max-width: 900px;
+  /* Slightly wider container */
+  margin: 30px auto;
+  /* More margin top/bottom */
+  background-color: #ffffff;
+  padding: 30px 40px;
+  /* More padding */
+  border-radius: 12px;
+  /* More rounded corners */
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
+  /* Stronger shadow */
+  border: 1px solid #e0e0e0;
+}
+
+h1,
+h2,
+h3,
+h4 {
+  color: #2c3e50;
+  /* Darker blue for headings */
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+h2 {
+  border-bottom: 2px solid #3498db;
+  padding-bottom: 10px;
+  margin-top: 30px;
+}
+
+label {
+  display: block;
+  margin-bottom: 8px;
+  font-weight: bold;
+  color: #555;
+}
+
+input[type="text"],
+input[type="email"],
+select {
+  width: calc(100% - 22px);
+  /* Account for padding and border */
+  padding: 12px;
+  margin-bottom: 20px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  /* More rounded */
+  box-sizing: border-box;
+  font-size: 16px;
+  transition: border-color 0.3s ease;
+}
+
+input[type="text"]:focus,
+input[type="email"]:focus,
+select:focus {
+  border-color: #3498db;
+  /* Blue focus border */
+  outline: none;
+}
+
+button {
+  background-color: #3498db;
+  /* Vibrant blue */
+  color: white;
+  padding: 12px 25px;
+  border: none;
+  border-radius: 8px;
+  /* Rounded buttons */
+  cursor: pointer;
+  font-size: 16px;
+  font-weight: bold;
+  margin-right: 15px;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+  box-shadow: 0 4px 10px rgba(0, 123, 255, 0.2);
+}
+
+button:hover {
+  background-color: #2980b9;
+  /* Darker blue on hover */
+  transform: translateY(-2px);
+  /* Slight lift effect */
+}
+
+button:active {
+  transform: translateY(0);
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+.error {
+  color: #e74c3c;
+  /* Red for errors */
+  background-color: #fdeded;
+  padding: 10px;
+  border-radius: 8px;
+  margin-top: -10px;
+  margin-bottom: 15px;
+  border: 1px solid #e74c3c;
+  text-align: center;
+}
+
+ul {
+  list-style: none;
+  padding: 0;
+  margin-top: 20px;
+}
+
+li {
+  background-color: #ecf0f1;
+  /* Light grey for list items */
+  margin-bottom: 12px;
+  padding: 15px 20px;
+  border-radius: 8px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border: 1px solid #dcdcdc;
+  transition: background-color 0.3s ease;
+}
+
+li:hover {
+  background-color: #e0e0e0;
+}
+
+li div {
+  display: flex;
+  gap: 10px;
+  /* Space between buttons in list item */
+}
+
+/* Specific styling for navigation buttons */
+.nav-buttons {
+  display: flex;
+  justify-content: center;
+  margin-top: 25px;
+  margin-bottom: 25px;
+  gap: 15px;
+  flex-wrap: wrap;
+  /* Allow buttons to wrap on smaller screens */
+}
+
+/* Form styling */
+form div {
+  margin-bottom: 15px;
+}
+
+form button {
+  width: auto;
+  /* Auto width for form submission buttons */
+  margin-top: 10px;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .container {
+    margin: 15px;
+    padding: 20px;
+  }
+
+  button {
+    padding: 10px 18px;
+    font-size: 14px;
+    margin-right: 10px;
+  }
+
+  li {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+  }
+
+  li div {
+    margin-top: 10px;
+  }
+}
+
+@media (max-width: 480px) {
+
+  input[type="text"],
+  input[type="email"],
+  select {
+    padding: 10px;
+    font-size: 14px;
+  }
+
+  button {
+    width: 100%;
+    margin-right: 0;
+    margin-bottom: 10px;
+  }
+
+  .nav-buttons {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  li div {
+    flex-direction: column;
+    width: 100%;
+  }
+
+  li button {
+    width: 100%;
+    margin-left: 0;
+  }
+}
