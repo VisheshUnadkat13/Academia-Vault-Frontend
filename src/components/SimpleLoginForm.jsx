@@ -1,6 +1,6 @@
 
 import React, { useState } from 'react';
-import axios from 'axios'; 
+import axios from 'axios';
 
 
 const SimpleLoginForm = () => {
@@ -9,7 +9,7 @@ const SimpleLoginForm = () => {
     const [message, setMessage] = useState('');
     const [isError, setIsError] = useState(false);
 
-    
+
     const handleSubmit = async (e) => {
         e.preventDefault();
         setMessage(''); // Clear previous messages
@@ -29,7 +29,7 @@ const SimpleLoginForm = () => {
 
         try {
             const response = await axios.post(
-                'http://localhost:3001/api/login', // Target endpoint as specified
+                '/api/login', // Target endpoint as specified
                 { username, email } // Data payload
             );
 
@@ -40,7 +40,7 @@ const SimpleLoginForm = () => {
             console.log('Form submission successful:', response.data);
 
         } catch (error) {
-            setMessage(`Submission failed. Please check backend (http://localhost:3001) and console. Error: ${error.message}`);
+            setMessage(`Submission failed. Please check backend and console. Error: ${error.message}`);
             setIsError(true);
             console.error('Form submission error:', error.response ? error.response.data : error.message);
         }
@@ -72,7 +72,7 @@ const SimpleLoginForm = () => {
                         required
                     />
                 </div>
-                {message && <p className={isError ? 'error' : 'success-message'} style={{color: isError ? 'red' : 'green', textAlign: 'center'}}>{message}</p>}
+                {message && <p className={isError ? 'error' : 'success-message'} style={{ color: isError ? 'red' : 'green', textAlign: 'center' }}>{message}</p>}
                 <button type="submit">Submit</button>
             </form>
         </div>

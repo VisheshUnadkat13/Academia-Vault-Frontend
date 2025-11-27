@@ -1,7 +1,4 @@
-
-
 import React, { useState } from 'react';
-
 
 const SemesterDepartmentSelection = ({ onSelect }) => {
     // State to hold the selected semester
@@ -15,11 +12,11 @@ const SemesterDepartmentSelection = ({ onSelect }) => {
     const semesters = ['1', '2', '3', '4', '5', '6', '7', '8'];
     const departments = [
         'Computer Engineering',
-        'Information Technology',
-        'Electronics & Communication',
-        'Mechanical Engineering',
-        'Civil Engineering',
-        'Electrical Engineering'
+        // 'Information Technology',
+        // 'Electronics & Communication',
+        // 'Mechanical Engineering',
+        // 'Civil Engineering',
+        // 'Electrical Engineering'
     ];
 
     /**
@@ -40,7 +37,7 @@ const SemesterDepartmentSelection = ({ onSelect }) => {
     };
 
     return (
-        <div>
+        <div className="card">
             <h2>Select Your Academic Details</h2>
             <form onSubmit={handleSubmit}>
                 <div>

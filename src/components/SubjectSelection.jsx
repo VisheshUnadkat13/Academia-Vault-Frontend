@@ -1,6 +1,3 @@
-
-
-
 import React, { useState, useEffect } from 'react';
 import axios from 'axios'; // Axios for making HTTP requests
 
@@ -26,7 +23,7 @@ const SubjectSelection = ({ semester, department, onSubjectSelect }) => {
             console.log(`[SubjectSelection] Fetching subjects for Semester: ${semester}, Department: ${department}`);
             try {
                 // Make a GET request to the backend API for subjects, passing semester and department as query parameters
-                const response = await axios.get(`http://localhost:3001/api/subjects?semester=${semester}&department=${department}`);
+                const response = await axios.get(`/api/subjects?semester=${semester}&department=${department}`);
                 console.log("[SubjectSelection] API response data:", response.data);
                 setSubjects(response.data); // Update subjects state with fetched data
             } catch (err) {
@@ -62,11 +59,11 @@ const SubjectSelection = ({ semester, department, onSubjectSelect }) => {
                 <p>No subjects found for Semester {semester} and Department {department}. Please check your database data or selections.</p>
             ) : (
                 // Display list of subjects if available
-                <ul>
+                <ul className="subject-list">
                     {subjects.map(subject => (
                         <li key={subject.id}>
                             <span>{subject.name}</span> {/* Use span for text to avoid button styling conflict */}
-                            <button onClick={() => onSubjectSelect(subject)}>Select Subject</button>
+                            <button className="select-subject-btn" onClick={() => onSubjectSelect(subject)}>Select Subject</button>
                         </li>
                     ))}
                 </ul>

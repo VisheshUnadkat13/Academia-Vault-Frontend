@@ -143,11 +143,19 @@ const PortalContent = () => {
                             {!selectedOption ? (
                                 <div>
                                     <h4>Choose an option for {selectedSubject.name}:</h4>
-                                    <div className="nav-buttons">
-                                        <button onClick={() => handleOptionSelect('material')}>Material</button>
-                                        <button onClick={() => handleOptionSelect('paper')}>Previous Year Paper</button>
-                                        <button onClick={() => handleOptionSelect('youtube')}>YouTube Videos</button>
-                                        <button onClick={() => handleOptionSelect('gate_material')}>GATE Material</button>
+                                    <div className="options-grid">
+                                        <div className="option-card" onClick={() => handleOptionSelect('material')}>
+                                            Material
+                                        </div>
+                                        <div className="option-card" onClick={() => handleOptionSelect('paper')}>
+                                            Previous Year Paper
+                                        </div>
+                                        <div className="option-card" onClick={() => handleOptionSelect('youtube')}>
+                                            YouTube Videos
+                                        </div>
+                                        <div className="option-card" onClick={() => handleOptionSelect('gate_material')}>
+                                            GATE Material
+                                        </div>
                                     </div>
                                 </div>
                             ) : (

@@ -18,7 +18,7 @@ const GateMaterialSection = ({ subjectId }) => {
 
             try {
                 // Make a GET request to the backend API for GATE materials, using subjectId
-                const response = await axios.get(`http://localhost:3001/api/gate-materials/${subjectId}`);
+                const response = await axios.get(`/api/gate-materials/${subjectId}`);
                 setGateMaterials(response.data); // Update GATE materials state with fetched data
             } catch (err) {
                 // Handle errors during GATE material fetching
@@ -41,7 +41,7 @@ const GateMaterialSection = ({ subjectId }) => {
      * @param {number} gateMaterialId - The ID of the GATE material to view.
      */
     const handleViewPdf = (gateMaterialId) => {
-        window.open(`http://localhost:3001/api/gate-materials/view/${gateMaterialId}`, '_blank');
+        window.open(`/api/gate-materials/view/${gateMaterialId}`, '_blank');
     };
 
     /**
@@ -51,7 +51,7 @@ const GateMaterialSection = ({ subjectId }) => {
      * @param {number} gateMaterialId - The ID of the GATE material to download.
      */
     const handleDownloadPdf = (gateMaterialId) => {
-        window.location.href = `http://localhost:3001/api/gate-materials/download/${gateMaterialId}`;
+        window.location.href = `/api/gate-materials/download/${gateMaterialId}`;
     };
 
     if (loading) {

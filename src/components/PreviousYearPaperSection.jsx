@@ -2,7 +2,7 @@
 
 
 import React, { useState, useEffect } from 'react';
-import axios from 'axios'; 
+import axios from 'axios';
 
 const PreviousYearPaperSection = ({ subjectId }) => {
     // State to store the list of fetched previous year papers
@@ -20,7 +20,7 @@ const PreviousYearPaperSection = ({ subjectId }) => {
 
             try {
                 // Make a GET request to the backend API for previous year papers, using subjectId
-                const response = await axios.get(`http://localhost:3001/api/papers/${subjectId}`);
+                const response = await axios.get(`/api/papers/${subjectId}`);
                 setPapers(response.data); // Update papers state with fetched data
             } catch (err) {
                 // Handle errors during paper fetching
@@ -40,7 +40,7 @@ const PreviousYearPaperSection = ({ subjectId }) => {
      */
     const handleViewPdf = (paperId) => {
         // Construct the URL to the backend endpoint that serves the PDF
-        window.open(`http://localhost:3001/api/papers/view/${paperId}`, '_blank');
+        window.open(`/api/papers/view/${paperId}`, '_blank');
     };
 
     /**
@@ -49,7 +49,7 @@ const PreviousYearPaperSection = ({ subjectId }) => {
      */
     const handleDownloadPdf = (paperId) => {
         // Construct the URL to the backend endpoint that triggers file download
-        window.location.href = `http://localhost:3001/api/papers/download/${paperId}`;
+        window.location.href = `/api/papers/download/${paperId}`;
     };
 
     if (loading) {

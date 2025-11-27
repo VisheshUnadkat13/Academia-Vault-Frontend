@@ -21,7 +21,7 @@ const MaterialSection = ({ subjectId }) => {
 
             try {
                 // Make a GET request to the backend API for materials, using subjectId
-                const response = await axios.get(`http://localhost:3001/api/materials/${subjectId}`);
+                const response = await axios.get(`/api/materials/${subjectId}`);
                 setMaterials(response.data); // Update materials state with fetched data
             } catch (err) {
                 // Handle errors during material fetching
@@ -41,7 +41,7 @@ const MaterialSection = ({ subjectId }) => {
      */
     const handleViewPdf = (materialId) => {
         // Construct the URL to the backend endpoint that serves the PDF
-        window.open(`http://localhost:3001/api/materials/view/${materialId}`, '_blank');
+        window.open(`/api/materials/view/${materialId}`, '_blank');
     };
 
     /**
@@ -50,7 +50,7 @@ const MaterialSection = ({ subjectId }) => {
      */
     const handleDownloadPdf = (materialId) => {
         // Construct the URL to the backend endpoint that triggers file download
-        window.location.href = `http://localhost:3001/api/materials/download/${materialId}`;
+        window.location.href = `/api/materials/download/${materialId}`;
     };
 
 

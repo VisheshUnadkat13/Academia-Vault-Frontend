@@ -1,4 +1,6 @@
 import React, { useState, useEffect } from 'react';// Axios for making HTTP requests
+import axios from 'axios';
+
 
 
 const YouTubeLinkSection = ({ subjectId }) => {
@@ -9,30 +11,30 @@ const YouTubeLinkSection = ({ subjectId }) => {
     // State to display error messages
     const [error, setError] = useState('');
 
-    
+
     useEffect(() => {
         const fetchYouTubeLinks = async () => {
-            setLoading(true); 
-            setError('');     
+            setLoading(true);
+            setError('');
             try {
-                
-                const response = await axios.get(`http://localhost:3001/api/youtube-links/${subjectId}`);
+
+                const response = await axios.get(`/api/youtube-links/${subjectId}`);
                 setYoutubeLinks(response.data); // Update state with fetched data
             } catch (err) {
-               
+
                 setError('Failed to fetch YouTube links. Please check backend is running and data exists.');
                 console.error('YouTube links fetch error:', err);
-               
+
                 if (axios.isAxiosError(err)) {
                     console.error('Axios error details:', err.response?.data || err.message);
                 }
             } finally {
-                setLoading(false); 
+                setLoading(false);
             }
         };
 
-        fetchYouTubeLinks(); 
-    }, [subjectId]); 
+        fetchYouTubeLinks();
+    }, [subjectId]);
 
     /**
      * Opens the YouTube video URL in a new browser tab.
