@@ -1,6 +1,5 @@
-
 import React, { useState } from 'react';
-import axios from 'axios';
+import api from '../api/axiosConfig';
 
 
 const SimpleLoginForm = () => {
@@ -28,7 +27,7 @@ const SimpleLoginForm = () => {
         }
 
         try {
-            const response = await axios.post(
+            const response = await api.post(
                 '/api/login', // Target endpoint as specified
                 { username, email } // Data payload
             );

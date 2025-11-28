@@ -1,9 +1,5 @@
-
-
-
 import React, { useState, useEffect } from 'react';
-import axios from 'axios'; // Axios for making HTTP requests
-
+import api from '../api/axiosConfig';
 
 const MaterialSection = ({ subjectId }) => {
     // State to store the list of fetched materials
@@ -21,7 +17,7 @@ const MaterialSection = ({ subjectId }) => {
 
             try {
                 // Make a GET request to the backend API for materials, using subjectId
-                const response = await axios.get(`/api/materials/${subjectId}`);
+                const response = await api.get(`/api/materials/${subjectId}`);
                 setMaterials(response.data); // Update materials state with fetched data
             } catch (err) {
                 // Handle errors during material fetching
@@ -41,7 +37,8 @@ const MaterialSection = ({ subjectId }) => {
      */
     const handleViewPdf = (materialId) => {
         // Construct the URL to the backend endpoint that serves the PDF
-        window.open(`/api/materials/view/${materialId}`, '_blank');
+        const baseUrl = import.meta.env.VITE_API_BASE_URL || 'http://localhost:3001';
+        window.open(`${baseUrl}/api/materials/view/${materialId}`, '_blank');
     };
 
     /**
@@ -50,7 +47,8 @@ const MaterialSection = ({ subjectId }) => {
      */
     const handleDownloadPdf = (materialId) => {
         // Construct the URL to the backend endpoint that triggers file download
-        window.location.href = `/api/materials/download/${materialId}`;
+        const baseUrl = import.meta.env.VITE_API_BASE_URL || 'http://localhost:3001';
+        window.location.href = `${baseUrl}/api/materials/download/${materialId}`;
     };
 
 

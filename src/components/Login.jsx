@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { useNavigate, Link } from 'react-router-dom';
-import axios from 'axios';
+import api from '../api/axiosConfig';
 
 const Login = ({ onLogin }) => {
     const navigate = useNavigate();
@@ -31,7 +31,7 @@ const Login = ({ onLogin }) => {
         }
 
         try {
-            const response = await axios.post('/api/auth/public/login', formData);
+            const response = await api.post('/api/auth/public/login', formData);
 
             const { jwtToken, username } = response.data;
             const token = jwtToken || response.data.token || response.data;

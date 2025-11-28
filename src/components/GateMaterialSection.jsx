@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import axios from 'axios';
+import api from '../api/axiosConfig';
 
 
 const GateMaterialSection = ({ subjectId }) => {
@@ -18,7 +18,7 @@ const GateMaterialSection = ({ subjectId }) => {
 
             try {
                 // Make a GET request to the backend API for GATE materials, using subjectId
-                const response = await axios.get(`/api/gate-materials/${subjectId}`);
+                const response = await api.get(`/api/gate-materials/${subjectId}`);
                 setGateMaterials(response.data); // Update GATE materials state with fetched data
             } catch (err) {
                 // Handle errors during GATE material fetching
@@ -41,7 +41,8 @@ const GateMaterialSection = ({ subjectId }) => {
      * @param {number} gateMaterialId - The ID of the GATE material to view.
      */
     const handleViewPdf = (gateMaterialId) => {
-        window.open(`/api/gate-materials/view/${gateMaterialId}`, '_blank');
+        const baseUrl = import.meta.env.VITE_API_BASE_URL || 'http://localhost:3001';
+        window.open(`${baseUrl}/api/gate-materials/view/${gateMaterialId}`, '_blank');
     };
 
     /**
@@ -51,7 +52,8 @@ const GateMaterialSection = ({ subjectId }) => {
      * @param {number} gateMaterialId - The ID of the GATE material to download.
      */
     const handleDownloadPdf = (gateMaterialId) => {
-        window.location.href = `/api/gate-materials/download/${gateMaterialId}`;
+        const baseUrl = import.meta.env.VITE_API_BASE_URL || 'http://localhost:3001';
+        window.location.href = `${baseUrl}/api/gate-materials/download/${gateMaterialId}`;
     };
 
     if (loading) {

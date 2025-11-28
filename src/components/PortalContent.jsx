@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import axios from 'axios';
+
 import SemesterDepartmentSelection from './SemesterDepartmentSelection';
 import SubjectSelection from './SubjectSelection';
 import MaterialSection from './MaterialSection';

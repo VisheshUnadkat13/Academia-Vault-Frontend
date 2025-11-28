@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { useNavigate, Link } from 'react-router-dom';
-import axios from 'axios';
+import api from '../api/axiosConfig';
 
 const Signup = () => {
     const navigate = useNavigate();
@@ -45,7 +45,7 @@ const Signup = () => {
                 password: formData.password
             };
 
-            await axios.post('/api/auth/public/register', apiData);
+            await api.post('/api/auth/public/register', apiData);
 
             navigate('/login');
         } catch (err) {

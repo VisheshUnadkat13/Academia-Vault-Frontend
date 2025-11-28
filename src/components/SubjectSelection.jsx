@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
-import axios from 'axios'; // Axios for making HTTP requests
+import api from '../api/axiosConfig'; // Axios for making HTTP requests
+import axios from 'axios'; // Keep axios for isAxiosError check if needed, or better, import isAxiosError from axios
 
 /**
  * SubjectSelection component fetches and displays a list of subjects
@@ -23,7 +24,7 @@ const SubjectSelection = ({ semester, department, onSubjectSelect }) => {
             console.log(`[SubjectSelection] Fetching subjects for Semester: ${semester}, Department: ${department}`);
             try {
                 // Make a GET request to the backend API for subjects, passing semester and department as query parameters
-                const response = await axios.get(`/api/subjects?semester=${semester}&department=${department}`);
+                const response = await api.get(`/api/subjects?semester=${semester}&department=${department}`);
                 console.log("[SubjectSelection] API response data:", response.data);
                 setSubjects(response.data); // Update subjects state with fetched data
             } catch (err) {

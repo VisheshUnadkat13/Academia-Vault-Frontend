@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';// Axios for making HTTP requests
-import axios from 'axios';
+import api from '../api/axiosConfig';
 
 
 
@@ -18,7 +18,7 @@ const YouTubeLinkSection = ({ subjectId }) => {
             setError('');
             try {
 
-                const response = await axios.get(`/api/youtube-links/${subjectId}`);
+                const response = await api.get(`/api/youtube-links/${subjectId}`);
                 setYoutubeLinks(response.data); // Update state with fetched data
             } catch (err) {
 
