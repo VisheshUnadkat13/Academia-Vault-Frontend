@@ -349,7 +349,7 @@ li button {
 /* Footer Styles */
 /* Footer Styles */
 .app-footer {
-  background-color: #ffffff;
+  background-color: #1e293b;
   border-top: 1px solid #e5e7eb;
   padding: 2rem 1rem;
   margin-top: auto;
@@ -366,11 +366,13 @@ li button {
   text-align: center;
   font-size: 0.9rem;
   margin-top: 20px;
+
 }
 
 .copyright {
   margin: 0;
   color: var(--text-main);
+  color: #cbd5e1;
 }
 
 .made-with {
