@@ -37,7 +37,7 @@ const PreviousYearPaperSection = ({ subjectId }) => {
      */
     const handleViewPdf = (paperId) => {
         // Construct the URL to the backend endpoint that serves the PDF
-        const baseUrl = import.meta.env.VITE_API_BASE_URL || 'http://localhost:3001';
+        const baseUrl = '';
         window.open(`${baseUrl}/api/papers/view/${paperId}`, '_blank');
     };
 
@@ -47,7 +47,7 @@ const PreviousYearPaperSection = ({ subjectId }) => {
      */
     const handleDownloadPdf = (paperId) => {
         // Construct the URL to the backend endpoint that triggers file download
-        const baseUrl = import.meta.env.VITE_API_BASE_URL || 'http://localhost:3001';
+        const baseUrl = '';
         window.location.href = `${baseUrl}/api/papers/download/${paperId}`;
     };
 

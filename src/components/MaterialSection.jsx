@@ -37,7 +37,7 @@ const MaterialSection = ({ subjectId }) => {
      */
     const handleViewPdf = (materialId) => {
         // Construct the URL to the backend endpoint that serves the PDF
-        const baseUrl = import.meta.env.VITE_API_BASE_URL || 'http://localhost:3001';
+        const baseUrl = '';
         window.open(`${baseUrl}/api/materials/view/${materialId}`, '_blank');
     };
 
@@ -47,7 +47,7 @@ const MaterialSection = ({ subjectId }) => {
      */
     const handleDownloadPdf = (materialId) => {
         // Construct the URL to the backend endpoint that triggers file download
-        const baseUrl = import.meta.env.VITE_API_BASE_URL || 'http://localhost:3001';
+        const baseUrl = '';
         window.location.href = `${baseUrl}/api/materials/download/${materialId}`;
     };
 

@@ -41,7 +41,7 @@ const GateMaterialSection = ({ subjectId }) => {
      * @param {number} gateMaterialId - The ID of the GATE material to view.
      */
     const handleViewPdf = (gateMaterialId) => {
-        const baseUrl = import.meta.env.VITE_API_BASE_URL || 'http://localhost:3001';
+        const baseUrl = '';
         window.open(`${baseUrl}/api/gate-materials/view/${gateMaterialId}`, '_blank');
     };
 
@@ -52,7 +52,7 @@ const GateMaterialSection = ({ subjectId }) => {
      * @param {number} gateMaterialId - The ID of the GATE material to download.
      */
     const handleDownloadPdf = (gateMaterialId) => {
-        const baseUrl = import.meta.env.VITE_API_BASE_URL || 'http://localhost:3001';
+        const baseUrl = '';
         window.location.href = `${baseUrl}/api/gate-materials/download/${gateMaterialId}`;
     };
 
