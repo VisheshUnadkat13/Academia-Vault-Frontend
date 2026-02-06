@@ -389,7 +389,8 @@ li button {
 }
 
 .footer-links a {
-  color: var(--text-secondary);
+  /* color: var(--text-secondary); */
+  color: white;
   text-decoration: none;
   transition: color 0.2s;
   font-size: 0.9rem;
@@ -506,6 +507,7 @@ li button {
     flex-direction: column;
     gap: 1rem;
     text-align: center;
+    
   }
 
   .nav-link {
